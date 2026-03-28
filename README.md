@@ -1,14 +1,14 @@
 # KISStack
 
-**Keep It Simple Stack** — an opinionated set of Claude Code slash commands that turn your AI assistant into a structured product team. Think, Plan, Build, Ship.
+**Keep It Simple Stack**: an opinionated set of Claude Code slash commands that turn your AI assistant into a structured product team. Think, Plan, Build, Ship.
 
 ---
 
-> "The best tools don't add complexity — they remove the friction between thinking and doing."
+> "The best tools don't add complexity. They remove the friction between thinking and doing."
 
-Most AI coding setups treat every interaction the same. You get one mode: "helpful assistant." But building a product isn't one activity — it's a dozen different ones. Evaluating an idea requires a different mindset than implementing it. Designing a feature requires different expertise than reviewing the code.
+Most AI coding setups treat every interaction the same. You get one mode: "helpful assistant." But building a product isn't one activity, it's a dozen different ones. Evaluating an idea requires a different mindset than implementing it. Designing a feature requires different expertise than reviewing the code.
 
-**KISStack gives your AI assistant distinct roles for each phase of building.** A VC who challenges your assumptions. A researcher who finds the data. A CTO who knows your stack. A designer with high taste. A developer who ships clean code. Each role has its own methodology, priorities, and output format — so you get structured, high-quality thinking at every stage.
+**KISStack gives your AI assistant distinct roles for each phase of building.** A VC who challenges your assumptions. A researcher who finds the data. A CTO who knows your stack. A designer with high taste. A developer who ships clean code. Each role has its own methodology, priorities, and output format, so you get structured, high-quality thinking at every stage.
 
 Built for solo founders and small teams who need to move fast without cutting corners.
 
@@ -18,17 +18,17 @@ Built for solo founders and small teams who need to move fast without cutting co
 
 Inspired by [GStack](https://github.com/garrytan/gstack)'s insight that structured roles produce dramatically better AI output than generic prompting. KISStack takes that idea and rebuilds it for a different audience and philosophy.
 
-**GStack gives you a virtual engineering team. KISStack gives you a virtual advisory board + two incredible developers — in 13 markdown files with zero dependencies.**
+**GStack gives you a virtual engineering team. KISStack gives you a virtual advisory board + two incredible developers, in 13 markdown files with zero dependencies.**
 
 ### What's different
 
 **Zero dependencies.** GStack requires Bun, Playwright, and a persistent Chromium daemon. KISStack is just markdown files. Copy them and go. No build step, no runtime, no binary. The simplest AI workflow system that could possibly work.
 
-**Built for the solo founder, not the engineering org.** GStack models a full engineering organization — 28 roles, formal handoffs, telemetry, CI gates, release trains. KISStack models what a solo founder actually needs: a strategic advisory board to challenge ideas, senior leaders to plan, and two excellent developers to build. 13 commands, no ceremony.
+**Built for the solo founder, not the engineering org.** GStack models a full engineering organization: 28 roles, formal handoffs, telemetry, CI gates, release trains. KISStack models what a solo founder actually needs: a strategic advisory board to challenge ideas, senior leaders to plan, and two excellent developers to build. 13 commands, no ceremony.
 
-**An advisory board, not a committee.** GStack's Think phase is YC Office Hours — one product discovery mode. KISStack runs three competing strategic lenses: a contrarian VC who asks what important truth you've found, a researcher who finds the actual data, and a product consultant who maps competitors and finds the wedge. They're designed to disagree — the orchestrator synthesizes the tension.
+**An advisory board, not a committee.** GStack's Think phase is YC Office Hours, a single product discovery mode. KISStack runs three competing strategic lenses: a contrarian VC who asks what important truth you've found, a researcher who finds the actual data, and a product consultant who maps competitors and finds the wedge. They're designed to disagree. The orchestrator synthesizes the tension.
 
-**Research-first, not prompt-first.** GStack's skills are sophisticated system prompts. KISStack's Think phase commands are research agents — they run 5-8 web searches, cross-reference sources, build citation tables with dates and URLs. The VC finds who's raised money in your space. The researcher finds the market sizing data. The product consultant reads the App Store reviews. It's not thinking harder — it's actually looking things up.
+**Research-first, not prompt-first.** GStack's skills are sophisticated system prompts. KISStack's Think phase commands are research agents. They run 5-8 web searches, cross-reference sources, build citation tables with dates and URLs. The VC finds who's raised money in your space. The researcher finds the market sizing data. The product consultant reads the App Store reviews. It's not thinking harder. It's actually looking things up.
 
 **Orchestrators resolve tension, not just sequence.** GStack's `/autoplan` runs reviews sequentially and stacks outputs. KISStack's `/think` and `/plan` orchestrators explicitly produce "where they agree" and "where they disagree" sections, forcing the AI to confront conflicts between the roles and produce a unified recommendation.
 
@@ -82,7 +82,7 @@ Think                    Plan                     Build                Ship
 
 ## Commands
 
-### Think Phase — Before You Build, Think
+### Think Phase: Before You Build, Think
 
 The Think phase is for strategic clarity. Run it before writing any code. Three specialists challenge and research your idea from different angles.
 
@@ -101,7 +101,7 @@ You: /think-vc should Otto expand into fitness tracking?
 Claude (as VC):
 ## VC Assessment: Otto Fitness Tracking Expansion
 
-**Verdict: PIVOT** — Don't build fitness tracking. Own the lab-to-action pipeline instead.
+**Verdict: PIVOT** - Don't build fitness tracking. Own the lab-to-action pipeline instead.
 
 ### The Secret
 Everyone is building fitness trackers that collect data. Nobody is building
@@ -113,7 +113,7 @@ Fitness tracking is a crowded 1-to-N market. Fitbit, Apple Health, Whoop...
 
 ---
 
-### Plan Phase — Architecture Decisions Before Code
+### Plan Phase: Architecture Decisions Before Code
 
 The Plan phase turns validated ideas into implementation-ready specs. Three senior leaders review scope, architecture, and design.
 
@@ -136,7 +136,7 @@ The Plan phase turns validated ideas into implementation-ready specs. Three seni
 
 ---
 
-### Build Phase — Implementation With Standards
+### Build Phase: Implementation With Standards
 
 The Build phase is where code gets written. Two developer roles with different specializations.
 
@@ -151,7 +151,7 @@ The Build phase is where code gets written. Two developer roles with different s
 ## Visual Check
 - [x] Layout matches spec
 - [x] Responsive: tested at mobile, tablet, desktop
-- [ ] Dark mode — needs Kevin's review on secondary bg color
+- [ ] Dark mode (needs review on secondary bg color)
 - [x] Spacing consistent with existing 4px scale
 - [x] Keyboard navigation works
 - [x] VoiceOver reads in logical order
@@ -160,15 +160,15 @@ The Build phase is where code gets written. Two developer roles with different s
 
 ---
 
-### Ship Phase — Review, Test, Deploy
+### Ship Phase: Review, Test, Deploy
 
-Simplified for solo founders. No ceremony, no process theater — just the checks that actually prevent production incidents.
+Simplified for solo founders. No ceremony, no process theater. Just the checks that actually prevent production incidents.
 
 | Command | Role | What They Do |
 |---------|------|-------------|
 | `/review` | **Code Reviewer** | Solo-weight review focused on what matters: will it break in prod? Security holes? Will you understand this in 3 months? Skips style nitpicks. Outputs a risk level (LOW/MEDIUM/HIGH) with specific file:line findings. |
 | `/qa` | **QA Tester** | Creates structured manual test plans (happy path, edge cases, regression checks) and generates automated tests using your project's framework. No browser daemon needed. |
-| `/ship` | **Release Manager** | Project-aware deploy pipeline. Runs pre-flight checks (lint, test, git status), builds, then **asks before deploying** — never auto-deploys. Knows each project's build and deploy commands. |
+| `/ship` | **Release Manager** | Project-aware deploy pipeline. Runs pre-flight checks (lint, test, git status), builds, then **asks before deploying**. Never auto-deploys. Knows each project's build and deploy commands. |
 
 ---
 
@@ -188,11 +188,11 @@ Every command auto-detects your project from the working directory and reads you
 
 ### Research-Backed Thinking
 
-The Think phase doesn't just theorize — it uses WebSearch to find real competitors, real market data, real academic research. The VC finds who's raised money in your space. The researcher finds the actual numbers. The product consultant reads the App Store reviews.
+The Think phase doesn't just theorize. It uses WebSearch to find real competitors, real market data, real academic research. The VC finds who's raised money in your space. The researcher finds the actual numbers. The product consultant reads the App Store reviews.
 
 ### Opinionated Outputs
 
-Every command produces a structured deliverable with a consistent format. The VC gives a GO/PIVOT/KILL verdict. The CEO produces MoSCoW-prioritized user stories. The code reviewer gives a risk level. No open-ended essays — actionable, scannable output.
+Every command produces a structured deliverable with a consistent format. The VC gives a GO/PIVOT/KILL verdict. The CEO produces MoSCoW-prioritized user stories. The code reviewer gives a risk level. No open-ended essays. Actionable, scannable output.
 
 ---
 
@@ -265,10 +265,10 @@ cp commands/*.md your-project/.claude/commands/
 
 Every command is a standalone markdown file. Fork and customize:
 
-- **Change the project detection map** — edit the project paths in each command to match your directory structure
-- **Adjust the roles** — modify the persona descriptions to match your preferences
-- **Add new commands** — follow the same format: Persona, Arguments, Steps, Output Format
-- **Remove what you don't need** — each command is independent, no shared dependencies
+- **Change the project detection map**: edit the project paths in each command to match your directory structure
+- **Adjust the roles**: modify the persona descriptions to match your preferences
+- **Add new commands**: follow the same format (Persona, Arguments, Steps, Output Format)
+- **Remove what you don't need**: each command is independent, no shared dependencies
 
 ---
 
@@ -298,12 +298,12 @@ The `/ship` command also has a project table with build and deploy commands. Upd
 |---|---|---|
 | **Target** | Solo founders, small teams | Engineering teams with established processes |
 | **Commands** | 13 focused commands | 28 commands |
-| **Dependencies** | None — just markdown files | Bun, Playwright, compiled binaries |
+| **Dependencies** | None (just markdown files) | Bun, Playwright, compiled binaries |
 | **Install** | `cp commands/*.md ~/.claude/commands/` | Clone + build + setup |
 | **Think phase** | 3 competing lenses (VC, researcher, product) with real web research | YC Office Hours (single product discovery mode) |
 | **Orchestration** | Synthesizes tension ("where they agree/disagree") | Sequential execution, stacked outputs |
 | **Browser testing** | Structured manual test plans | Persistent Chromium daemon (~100ms commands) |
-| **Philosophy** | Keep it simple — earn your complexity | Boil the lake — AI makes completeness cheap |
+| **Philosophy** | Keep it simple. Earn your complexity. | Boil the lake. AI makes completeness cheap. |
 | **Customization** | Edit a markdown file | Fork + rebuild from templates |
 | **Time to fork & make yours** | 5 minutes | Understand build system first |
 
@@ -338,9 +338,9 @@ Yes. Every command is standalone. Use `/review` without ever touching `/think`. 
 
 KISStack is opinionated by design, but contributions are welcome:
 
-1. **New roles** — propose a new command with a clear persona, methodology, and output format
-2. **Improvements** — sharpen existing commands based on real usage
-3. **Adaptations** — share project detection configs for common stacks (Rails, Django, Flutter, etc.)
+1. **New roles**: propose a new command with a clear persona, methodology, and output format
+2. **Improvements**: sharpen existing commands based on real usage
+3. **Adaptations**: share project detection configs for common stacks (Rails, Django, Flutter, etc.)
 
 Open an issue first for new roles. PRs welcome for improvements.
 
