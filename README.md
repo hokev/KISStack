@@ -14,12 +14,34 @@ Built for solo founders and small teams who need to move fast without cutting co
 
 ---
 
+## Why KISStack
+
+Inspired by [GStack](https://github.com/garrytan/gstack)'s insight that structured roles produce dramatically better AI output than generic prompting. KISStack takes that idea and rebuilds it for a different audience and philosophy.
+
+**GStack gives you a virtual engineering team. KISStack gives you a virtual advisory board + two incredible developers — in 13 markdown files with zero dependencies.**
+
+### What's different
+
+**Zero dependencies.** GStack requires Bun, Playwright, and a persistent Chromium daemon. KISStack is just markdown files. Copy them and go. No build step, no runtime, no binary. The simplest AI workflow system that could possibly work.
+
+**Built for the solo founder, not the engineering org.** GStack models a full engineering organization — 28 roles, formal handoffs, telemetry, CI gates, release trains. KISStack models what a solo founder actually needs: a strategic advisory board to challenge ideas, senior leaders to plan, and two excellent developers to build. 13 commands, no ceremony.
+
+**An advisory board, not a committee.** GStack's Think phase is YC Office Hours — one product discovery mode. KISStack runs three competing strategic lenses: a contrarian VC who asks what important truth you've found, a researcher who finds the actual data, and a product consultant who maps competitors and finds the wedge. They're designed to disagree — the orchestrator synthesizes the tension.
+
+**Research-first, not prompt-first.** GStack's skills are sophisticated system prompts. KISStack's Think phase commands are research agents — they run 5-8 web searches, cross-reference sources, build citation tables with dates and URLs. The VC finds who's raised money in your space. The researcher finds the market sizing data. The product consultant reads the App Store reviews. It's not thinking harder — it's actually looking things up.
+
+**Orchestrators resolve tension, not just sequence.** GStack's `/autoplan` runs reviews sequentially and stacks outputs. KISStack's `/think` and `/plan` orchestrators explicitly produce "where they agree" and "where they disagree" sections, forcing the AI to confront conflicts between the roles and produce a unified recommendation.
+
+**Forkable in 5 minutes.** GStack has a build system, templates, generated docs, and compiled binaries. KISStack is 13 standalone markdown files. Want to change the CTO's personality? Edit one file. Want to add a new role? Copy one and follow the pattern. No toolchain to learn first.
+
+---
+
 ## Quick Start
 
 **1.** Clone the repo:
 
 ```bash
-git clone https://github.com/kevinho/KISStack.git
+git clone https://github.com/hokev/KISStack.git
 ```
 
 **2.** Run the setup script:
@@ -215,7 +237,7 @@ A typical feature development using KISStack:
 ### Option A: Automated Setup
 
 ```bash
-git clone https://github.com/kevinho/KISStack.git
+git clone https://github.com/hokev/KISStack.git
 cd KISStack
 ./setup.sh
 ```
@@ -274,16 +296,16 @@ The `/ship` command also has a project table with build and deploy commands. Upd
 
 | | KISStack | GStack |
 |---|---|---|
-| **Target** | Solo founders, small teams | Teams with established processes |
+| **Target** | Solo founders, small teams | Engineering teams with established processes |
 | **Commands** | 13 focused commands | 28 commands |
-| **Dependencies** | None (just markdown) | Bun, Playwright |
-| **Install** | Copy files | Build + setup script |
-| **Browser testing** | Manual test plans | Persistent Chromium daemon |
-| **Philosophy** | Keep it simple | Boil the lake |
-| **Orchestration** | Inline (no subprocesses) | Multi-agent with cross-model |
-| **Customization** | Edit markdown files | Fork + rebuild |
-
-KISStack is inspired by GStack's insight that structured roles produce better AI output. It takes that idea and strips it down for builders who want less tooling, not more.
+| **Dependencies** | None — just markdown files | Bun, Playwright, compiled binaries |
+| **Install** | `cp commands/*.md ~/.claude/commands/` | Clone + build + setup |
+| **Think phase** | 3 competing lenses (VC, researcher, product) with real web research | YC Office Hours (single product discovery mode) |
+| **Orchestration** | Synthesizes tension ("where they agree/disagree") | Sequential execution, stacked outputs |
+| **Browser testing** | Structured manual test plans | Persistent Chromium daemon (~100ms commands) |
+| **Philosophy** | Keep it simple — earn your complexity | Boil the lake — AI makes completeness cheap |
+| **Customization** | Edit a markdown file | Fork + rebuild from templates |
+| **Time to fork & make yours** | 5 minutes | Understand build system first |
 
 ---
 
