@@ -38,14 +38,32 @@ Write code following these rules:
 - **i18n** — if the project has translations, add keys for new UI text
 - **No over-engineering** — don't add abstractions, utilities, or config for hypothetical futures
 
-### 5. Verify
+### 5. Implement Instrumentation
+If a `/plan-analyst` or `/plan` artifact exists with an instrumentation plan:
+- Add analytics events as specified in the event taxonomy
+- Follow existing event naming conventions in the codebase
+- Include all required properties on each event
+- Fire events at the correct points (client-side vs. server-side as specified)
+- Respect consent/opt-out settings if applicable
+
+If no instrumentation plan exists, flag this: "No instrumentation plan was provided. Consider running `/plan-analyst {feature}` to define tracking before shipping."
+
+### 6. Verify
 After implementing:
 - Run the project's lint command if available
 - Run tests if available
 - Check for TypeScript errors
+- Verify analytics events fire correctly (check the console/network tab for event payloads)
 - Briefly describe what was built and what to test manually
 
 Do NOT create a git commit unless Kevin asks.
 
 ## Output
 No special format — this is a "do the work" command. Start with the brief plan outline (Step 3), then implement. End with a verification summary of what was built and what to test.
+
+Always end with:
+
+```
+### Suggested Next Command
+`/review branch` to review the changes, or `/qa {feature}` to generate a test plan.
+```

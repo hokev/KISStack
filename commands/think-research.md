@@ -75,6 +75,9 @@ Output using this exact format:
 ### Sources
 1. [{Title}](url) — {one-line on relevance and credibility}
 2. ...
+
+### Suggested Next Command
+{Which KISStack command to run next: `/think-vc {topic}` for strategic evaluation, `/think-product {topic}` for competitor analysis, or `/plan-ceo {feature}` to start planning.}
 ```
 
 Keep the brief under 800 words unless the topic genuinely requires more depth. Density over length.

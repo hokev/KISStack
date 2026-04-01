@@ -69,4 +69,7 @@ Output using this exact format:
 
 ### Fastest Learning Experiment
 {The cheapest, quickest way to validate the core assumption. Not "build an MVP" — something even smaller.}
+
+### Suggested Next Command
+{Which KISStack command to run next: `/think-research {topic}` for deeper data, `/think-analyst {topic}` for metrics framework, or `/plan-ceo {feature}` to start planning.}
 ```

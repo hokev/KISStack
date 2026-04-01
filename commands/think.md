@@ -1,11 +1,13 @@
 # Think Phase Orchestrator — KISStack
 
-Run all three Think phase perspectives on a single question, then synthesize. This gives Kevin a 360-degree strategic view before any planning or building.
+Run all five Think phase perspectives on a single question, then synthesize. This gives Kevin a 360-degree strategic view before any planning or building.
 
-The three lenses:
+The five lenses:
 1. **VC Strategist** (Founders Fund / Thiel) — contrarian, monopoly potential, zero-to-one
 2. **MIT Researcher** — data-driven, deep research, citations
 3. **Product Consultant** (serial builder) — competitors, PMF, practical wedge
+4. **Product Analyst** — metrics, funnels, retention, cohort behavior, instrumentation
+5. **Data Scientist** — experiment design, statistical rigor, predictive modeling
 
 ## Arguments
 - `$ARGUMENTS` — the strategic question, idea, or product direction to evaluate
@@ -51,9 +53,31 @@ Switch to serial startup builder mode. Pragmatic and competitor-obsessed.
 
 Produce a concise product brief (PMF signal, competitor table, wedge, feature priority).
 
-### 5. Synthesize
+### 5. Product Analyst Assessment
+Switch to metrics-driven product analyst mode. Precise and evidence-focused.
 
-This is the most important step. Compare the three perspectives and produce a unified recommendation.
+- Use WebSearch to find industry benchmarks (retention rates, conversion rates, engagement benchmarks)
+- Define the North Star Metric and input metrics tree
+- Map the AARRR funnel with key conversion points and risks
+- Identify power user signals and churn signals from cohort behavior
+- Recommend the minimum instrumentation needed to measure success
+
+Produce a concise product analysis (North Star, funnel breakdown, cohort insights, instrumentation checklist).
+
+### 6. Data Scientist Assessment
+Switch to statistical rigor mode. Methodical and probabilistic.
+
+- Use WebSearch to find relevant statistical approaches, baseline rates, and experiment design patterns
+- Frame precise hypotheses (null and alternative)
+- Design the minimum viable experiment (A/B test parameters, sample size, runtime)
+- Identify biases and pitfalls that could invalidate results
+- Recommend the simplest implementation path that's still statistically valid
+
+Produce a concise data science brief (hypothesis, methodology, experiment design, bias checklist).
+
+### 7. Synthesize
+
+This is the most important step. Compare the five perspectives and produce a unified recommendation.
 
 Output using this exact format:
 
@@ -79,9 +103,21 @@ Output using this exact format:
 - {key insight 2}
 - {key insight 3}
 
+### Product Analyst Says
+**North Star:** {metric}
+- {key insight 1 — funnel/retention/cohort}
+- {key insight 2}
+- {key insight 3}
+
+### Data Scientist Says
+**Analysis Type:** {A/B Test / Causal Inference / Predictive Model}
+- {key insight 1 — experiment design/statistical}
+- {key insight 2}
+- {key insight 3}
+
 ---
 
-### Where All Three Agree
+### Where All Five Agree
 - {consensus point — these are high-confidence signals}
 
 ### Where They Disagree

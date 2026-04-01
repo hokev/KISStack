@@ -66,4 +66,7 @@ Output using this exact format:
 
 ### What I'd Ask in the Partner Meeting
 - {The 2-3 hardest questions a VC would ask about this}
+
+### Suggested Next Command
+{Which KISStack command to run next: `/think-research {topic}` for deeper data, `/think-product {topic}` for competitor analysis, or `/plan-ceo {feature}` to start planning.}
 ```

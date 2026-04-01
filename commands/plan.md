@@ -1,11 +1,12 @@
 # Plan Phase Orchestrator — KISStack
 
-Run all three Plan phase perspectives on a single feature, then merge into one implementation plan. This gives Kevin a unified, sequenced plan that balances product, technical, and design considerations.
+Run all four Plan phase perspectives on a single feature, then merge into one implementation plan. This gives Kevin a unified, sequenced plan that balances product, technical, design, and data considerations.
 
-The three lenses:
+The four lenses:
 1. **CEO/CPO** — user stories, scope boundary, prioritization
 2. **CTO** — architecture, stack decisions, effort sizing
 3. **Principal Designer** — component hierarchy, interactions, accessibility
+4. **Product Analyst** — instrumentation, event taxonomy, success metrics, QA validation
 
 ## Arguments
 - `$ARGUMENTS` — the feature or initiative to plan
@@ -50,13 +51,23 @@ Switch to design systems thinker:
 
 Produce a concise design spec (components, interactions, states, a11y).
 
-### 5. Resolve Tensions & Merge
-Compare the three plans. Where they conflict, resolve:
+### 5. Product Analyst Planning
+Switch to instrumentation planning mode:
+- Audit existing analytics setup and event conventions in the codebase
+- Define success metrics with targets and timeframes
+- Create event taxonomy — name each event, define properties, specify client vs. server
+- Define the funnel for the critical user flow
+- Produce a QA validation checklist for verifying events fire correctly
+
+Produce a concise instrumentation plan (success metrics, event taxonomy, funnel, QA checklist).
+
+### 6. Resolve Tensions & Merge
+Compare the four plans. Where they conflict, resolve:
 - CEO wants feature X but CTO says it's L-effort → defer to v1.1
 - Designer wants animation Y but it adds complexity → simplify
 - CTO suggests approach A but it doesn't support the design → find middle ground
 
-### 6. Deliver
+### 7. Deliver
 
 Output using this exact format:
 
@@ -98,6 +109,22 @@ Output using this exact format:
 
 **Accessibility:**
 - [ ] {requirement}
+
+---
+
+### Instrumentation (Product Analyst)
+**Success Metrics:**
+| Metric | Target | Timeframe |
+|--------|--------|-----------|
+| {metric} | {target} | {when} |
+
+**Key Events:**
+| Event | Trigger | Client/Server |
+|-------|---------|---------------|
+| {event_name} | {when it fires} | {where} |
+
+**QA Validation:**
+- [ ] {event fires correctly on action}
 
 ---
 

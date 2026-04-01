@@ -57,6 +57,9 @@ Output using this exact format:
 
 ### One Thing to Watch
 {The single most important thing to keep an eye on after shipping this}
+
+### Suggested Next Command
+`/qa {feature}` to generate a test plan, or `/ship` if tests pass and risk is LOW.
 ```
 
 If everything looks good, say so briefly. Don't invent issues to seem thorough.

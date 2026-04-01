@@ -45,7 +45,16 @@ Build with attention to:
 - **Screen readers** — `aria-label`, `role`, `aria-live` for dynamic content
 - **States** — design all states: empty, loading, error, populated, disabled, hover, focus, active
 
-### 5. Visual Verification
+### 5. Implement Instrumentation
+If a `/plan-analyst` or `/plan` artifact exists with an instrumentation plan:
+- Add analytics events for UI interactions as specified in the event taxonomy
+- Fire events on the correct user actions (button taps, screen views, form submissions)
+- Include all required properties (feature context, interaction type, etc.)
+- Follow existing event naming conventions
+
+If no instrumentation plan exists, flag this: "No instrumentation plan was provided. Consider running `/plan-analyst {feature}` to define tracking before shipping."
+
+### 6. Visual Verification
 After implementing, run through this checklist:
 
 ```
@@ -66,3 +75,10 @@ After implementing, run through this checklist:
 Present this checklist with results after implementation. Flag any items that need Kevin's visual review.
 
 Do NOT create a git commit unless Kevin asks.
+
+Always end with:
+
+```
+### Suggested Next Command
+`/review branch` to review the changes, or `/qa {feature}` to generate a test plan.
+```

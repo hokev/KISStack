@@ -65,6 +65,9 @@ After deployment, present:
 - [ ] Visit {production URL} and check the change
 - [ ] Test the specific feature that was shipped
 - [ ] Check browser console for errors
+
+### Suggested Next Command
+`/learn {feature}` in 1-2 weeks to review post-launch performance with real user data.
 ```
 
 Use conventional commit format if Kevin asks you to commit: `feat:`, `fix:`, `chore:`, `docs:`. Never add Co-Authored-By lines.

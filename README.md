@@ -18,13 +18,13 @@ Built for solo founders and small teams who need to move fast without cutting co
 
 Inspired by [GStack](https://github.com/garrytan/gstack)'s insight that structured roles produce dramatically better AI output than generic prompting. KISStack takes that idea and rebuilds it for a different audience and philosophy.
 
-**GStack gives you a virtual engineering team. KISStack gives you a virtual advisory board + two incredible developers, in 13 markdown files with zero dependencies.**
+**GStack gives you a virtual engineering team. KISStack gives you a virtual advisory board + two incredible developers, in 17 markdown files with zero dependencies.**
 
 ### What's different
 
 **Zero dependencies.** GStack requires Bun, Playwright, and a persistent Chromium daemon. KISStack is just markdown files. Copy them and go. No build step, no runtime, no binary. The simplest AI workflow system that could possibly work.
 
-**Built for the solo founder, not the engineering org.** GStack models a full engineering organization: 28 roles, formal handoffs, telemetry, CI gates, release trains. KISStack models what a solo founder actually needs: a strategic advisory board to challenge ideas, senior leaders to plan, and two excellent developers to build. 13 commands, no ceremony.
+**Built for the solo founder, not the engineering org.** GStack models a full engineering organization: 28 roles, formal handoffs, telemetry, CI gates, release trains. KISStack models what a solo founder actually needs: a strategic advisory board to challenge ideas, senior leaders to plan, and two excellent developers to build. 17 commands, no ceremony.
 
 **An advisory board, not a committee.** GStack's Think phase is YC Office Hours, a single product discovery mode. KISStack runs three competing strategic lenses: a contrarian VC who asks what important truth you've found, a researcher who finds the actual data, and a product consultant who maps competitors and finds the wedge. They're designed to disagree. The orchestrator synthesizes the tension.
 
@@ -32,7 +32,7 @@ Inspired by [GStack](https://github.com/garrytan/gstack)'s insight that structur
 
 **Orchestrators resolve tension, not just sequence.** GStack's `/autoplan` runs reviews sequentially and stacks outputs. KISStack's `/think` and `/plan` orchestrators explicitly produce "where they agree" and "where they disagree" sections, forcing the AI to confront conflicts between the roles and produce a unified recommendation.
 
-**Forkable in 5 minutes.** GStack has a build system, templates, generated docs, and compiled binaries. KISStack is 13 standalone markdown files. Want to change the CTO's personality? Edit one file. Want to add a new role? Copy one and follow the pattern. No toolchain to learn first.
+**Forkable in 5 minutes.** GStack has a build system, templates, generated docs, and compiled binaries. KISStack is 15 standalone markdown files. Want to change the CTO's personality? Edit one file. Want to add a new role? Copy one and follow the pattern. No toolchain to learn first.
 
 ---
 
@@ -66,16 +66,21 @@ That's it. No build step, no dependencies, no runtime. Just markdown files that 
 
 KISStack follows a four-phase sprint: **Think > Plan > Build > Ship.**
 
-Each phase has specialized roles. Use them individually or run the orchestrators (`/think`, `/plan`) to get all perspectives in one pass.
+Each phase has specialized roles. Use them individually or run the orchestrators (`/think`, `/plan`) to get all perspectives in one pass. After shipping, `/learn` closes the feedback loop.
 
 ```
-Think                    Plan                     Build                Ship
-  |                        |                        |                    |
-  |-- /think-vc            |-- /plan-ceo            |-- /build-fullstack |-- /review
-  |-- /think-research      |-- /plan-cto            |-- /build-frontend  |-- /qa
-  |-- /think-product       |-- /plan-design         |                    |-- /ship
-  |                        |                        |
-  '-- /think (all three)   '-- /plan (all three)
+Think                    Plan                     Build                Ship                 Learn
+  |                        |                        |                    |                    |
+  |-- /think-vc            |-- /plan-ceo            |-- /build-fullstack |-- /review          |-- /learn
+  |-- /think-research      |-- /plan-cto            |-- /build-frontend  |-- /qa              |
+  |-- /think-product       |-- /plan-design         |                    |-- /ship             |
+  |                        |-- /plan-analyst        |                    |                    |
+  |-- /think-analyst       |                        |                    |                    |
+  |-- /think-data          |                        |                    |                    |
+  |                        |                        |                    |                    |
+  '-- /think (all five)    '-- /plan (all four)                                             |
+                                                                                             |
+  <─────────────────────────────── feeds back into Think / Plan ─────────────────────────────'
 ```
 
 ---
@@ -84,14 +89,16 @@ Think                    Plan                     Build                Ship
 
 ### Think Phase: Before You Build, Think
 
-The Think phase is for strategic clarity. Run it before writing any code. Three specialists challenge and research your idea from different angles.
+The Think phase is for strategic clarity. Run it before writing any code. Five specialists challenge and research your idea from different angles.
 
 | Command | Role | What They Do |
 |---------|------|-------------|
 | `/think-vc` | **Founders Fund VC** | Contrarian analysis. Evaluates zero-to-one potential, monopoly dynamics, and defensibility. Asks the hard questions a VC would ask in a partner meeting. Produces a GO / PIVOT / KILL verdict. |
 | `/think-research` | **MIT Researcher** | Deep research with academic rigor. Runs 5-8 web searches, cross-references sources, builds data tables with citations. Finds what the data actually says, not what the hype claims. |
 | `/think-product` | **Product Consultant** | Serial startup builder who's seen what works. Maps competitors, assesses product-market fit, identifies the wedge, and designs the fastest learning experiment. |
-| `/think` | **Orchestrator** | Runs all three in sequence, then synthesizes where they agree, where they disagree, and what to do next. |
+| `/think-analyst` | **Product Analyst** | Metrics-driven analysis. Defines North Star Metric, maps AARRR funnels, identifies cohort behavior patterns, and builds instrumentation checklists. Finds what the data says about user behavior. |
+| `/think-data` | **Data Scientist** | Statistical rigor and experiment design. Frames hypotheses, designs A/B tests with power analysis, identifies biases, and recommends the minimum viable experiment that produces trustworthy results. |
+| `/think` | **Orchestrator** | Runs all five in sequence, then synthesizes where they agree, where they disagree, and what to do next. |
 
 **Example:**
 
@@ -122,7 +129,8 @@ The Plan phase turns validated ideas into implementation-ready specs. Three seni
 | `/plan-ceo` | **CEO/CPO** | Defines outcomes, writes user stories, prioritizes with MoSCoW, draws hard scope boundaries. Asks: "What's the smallest thing we can ship that teaches us the most?" |
 | `/plan-cto` | **CTO** | Evaluates 2-3 technical approaches against your actual stack. Sizes effort, maps risks, lists files to touch. Biased toward boring technology. "Use what you have before adding something new." |
 | `/plan-design` | **Principal Designer** | Designs in systems, not screens. Component hierarchy, all interaction states (empty/loading/error/populated), accessibility requirements, responsive behavior. |
-| `/plan` | **Orchestrator** | Runs all three, resolves tensions (CEO wants X but CTO says it's L-effort), produces a single sequenced implementation plan with checkboxes. |
+| `/plan-analyst` | **Product Analyst** | Instrumentation planning. Defines success metrics, event taxonomy, funnel sequences, and a QA validation checklist. Works with CTO to determine where events fire. Ensures features ship measurable. |
+| `/plan` | **Orchestrator** | Runs all four, resolves tensions (CEO wants X but CTO says it's L-effort), produces a single sequenced implementation plan with checkboxes and instrumentation spec. |
 
 **The orchestrator resolves conflicts:**
 
@@ -169,6 +177,24 @@ Simplified for solo founders. No ceremony, no process theater. Just the checks t
 | `/review` | **Code Reviewer** | Solo-weight review focused on what matters: will it break in prod? Security holes? Will you understand this in 3 months? Skips style nitpicks. Outputs a risk level (LOW/MEDIUM/HIGH) with specific file:line findings. |
 | `/qa` | **QA Tester** | Creates structured manual test plans (happy path, edge cases, regression checks) and generates automated tests using your project's framework. No browser daemon needed. |
 | `/ship` | **Release Manager** | Project-aware deploy pipeline. Runs pre-flight checks (lint, test, git status), builds, then **asks before deploying**. Never auto-deploys. Knows each project's build and deploy commands. |
+
+---
+
+### Learn Phase: Close the Loop
+
+The Learn phase is the feedback loop most solo founders skip. After a feature ships and has real usage data, `/learn` brings together Product, Analyst, and Design perspectives to review what actually happened — not what you hoped would happen.
+
+| Command | Role | What They Do |
+|---------|------|-------------|
+| `/learn` | **Post-Launch Review** | Combines three lenses — qualitative (user feedback, reviews, social), quantitative (metrics, funnels, retention), and UX (friction, discoverability, a11y) — into a unified Keep/Iterate/Rethink/Kill verdict with concrete next steps that feed back into Think or Plan. |
+
+**This is not part of the sprint cycle.** Run it 1-2 weeks after shipping, when there's real usage data. It closes the loop:
+
+```
+Think → Plan → Build → Ship
+  ↑                       |
+  └──── /learn ───────────┘
+```
 
 ---
 
@@ -223,6 +249,13 @@ A typical feature development using KISStack:
 /review branch
 /qa nutrition insights
 /ship Otto
+
+# 5. Learn from it (1-2 weeks later)
+/learn nutrition insights, 2 weeks post-launch
+  → Users love the correlation cards (qualitative), but adoption is only
+    12% (quantitative). Discoverability is the issue — the entry point
+    is buried in settings (UX). Verdict: ITERATE. Next step:
+    /plan-ceo surface nutrition insights on the home dashboard.
 ```
 
 ---
@@ -297,7 +330,7 @@ The `/ship` command also has a project table with build and deploy commands. Upd
 | | KISStack | GStack |
 |---|---|---|
 | **Target** | Solo founders, small teams | Engineering teams with established processes |
-| **Commands** | 13 focused commands | 28 commands |
+| **Commands** | 17 focused commands | 28 commands |
 | **Dependencies** | None (just markdown files) | Bun, Playwright, compiled binaries |
 | **Install** | `cp commands/*.md ~/.claude/commands/` | Clone + build + setup |
 | **Think phase** | 3 competing lenses (VC, researcher, product) with real web research | YC Office Hours (single product discovery mode) |

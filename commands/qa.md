@@ -46,7 +46,19 @@ Write a test plan Kevin can walk through:
 
 Keep it focused — 5-10 tests max. Cover the critical path, not every permutation.
 
-### 4. Automated Tests
+### 4. Instrumentation Validation
+If a `/plan-analyst` or `/plan` artifact exists with a QA validation checklist, or if analytics events exist in the code:
+- Verify each event fires on the correct user action
+- Check event properties are populated with correct values
+- Walk the funnel sequence — do events fire in the expected order?
+- Test edge cases: does the event fire twice on double-tap? Does it fire on error states?
+- Verify no events fire when they shouldn't (e.g., on page load without user action)
+
+If events are missing or firing incorrectly, flag them as **Must Fix** with specific details on what's wrong, so the developer can correct them before shipping.
+
+If no instrumentation exists for a feature that should have tracking, flag: "No analytics events found for this feature. Consider running `/plan-analyst {feature}` to define tracking."
+
+### 5. Automated Tests
 If the project has a test framework:
 - Write test files that cover the critical paths
 - Follow existing test patterns in the codebase
@@ -55,7 +67,7 @@ If the project has a test framework:
 
 If the project is manual-only (Jekyll, Remotion), skip this step.
 
-### 5. Deliver
+### 6. Deliver
 
 Output using this exact format:
 
@@ -78,6 +90,17 @@ Output using this exact format:
 ### Automated Tests
 {Generated test code, or "N/A — manual testing only for this project"}
 
+### Instrumentation Validation
+| Event | Expected Trigger | Status | Issue |
+|-------|-----------------|--------|-------|
+| {event_name} | {user action} | {PASS / FAIL / MISSING} | {what's wrong, or "—"} |
+
+{If all events pass: "All instrumentation verified."}
+{If failures: flag each with specific fix needed and recommend `/build-fullstack` to correct before `/ship`.}
+
 ### What Could Break
 - {Area of concern and why — helps Kevin know where to look if bugs appear later}
+
+### Suggested Next Command
+`/ship` to build and deploy, or `/review branch` if code hasn't been reviewed yet.
 ```
